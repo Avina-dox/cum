@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>¡Feliz Cumpleaños Fátima!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Animaciones extra y tipografía divertida -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
+            transition: background 1s;
+            animation: bg-move 8s linear infinite alternate;
+        }
+        @keyframes bg-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .card {
+            animation: pop-in 1s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes pop-in {
+            0% { transform: scale(0.7) rotate(-10deg); opacity: 0; }
+            80% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        h1 {
+            animation: bounce 1.2s 0.5s both;
+        }
+        @keyframes bounce {
+            0% { transform: scale(0.8); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .balloon {
+            animation: float 3s ease-in-out infinite alternate, wiggle 2s infinite;
+        }
+        @keyframes wiggle {
+            0%,100% { transform: rotate(-3deg);}
+            50% { transform: rotate(3deg);}
+        }
+        .confetti span {
+            animation: confetti-fall 2.5s linear infinite, spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }
+        .cake {
+            animation: cake-pop 1.2s 1s both;
+        }
+        @keyframes cake-pop {
+            0% { transform: translateY(80px) scale(0.7); opacity: 0;}
+            100% { transform: translateY(0) scale(1); opacity: 1;}
+        }
+        .flame {
+            animation: flame-flicker 0.6s infinite alternate, flame-glow 1.2s infinite alternate;
+        }
+        @keyframes flame-glow {
+            0% { box-shadow: 0 0 10px 2px #ffeb3b88;}
+            100% { box-shadow: 0 0 20px 6px #ff980088;}
+        }
+        /* Animación de texto */
+        p {
+            animation: fade-in-up 1.2s 1.2s both;
+        }
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(30px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: #fffbe7;
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(255, 140, 0, 0.2);
+            padding: 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .balloons {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .balloon {
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            opacity: 0.8;
+            animation: float 3s ease-in-out infinite alternate;
+        }
+        .balloon1 { background: #ff6f91; left: 10px; animation-delay: 0s;}
+        .balloon2 { background: #f9f871; left: 80px; animation-delay: 0.5s;}
+        .balloon3 { background: #6fcf97; left: 150px; animation-delay: 1s;}
+        .balloon4 { background: #56ccf2; left: 220px; animation-delay: 1.5s;}
+        @keyframes float {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-20px);}
+        }
+        h1 {
+            color: #ff6f91;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            text-shadow: 2px 2px 0 #fff176, 4px 4px 0 #fcb69f;
+        }
+        p {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        .confetti {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100%;
+            top: 0; left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .confetti span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: confetti-fall 2.5s linear infinite;
+        }
+        .confetti .c1 { background: #ff6f91; left: 10%; animation-delay: 0s;}
+        .confetti .c2 { background: #f9f871; left: 30%; animation-delay: 0.5s;}
+        .confetti .c3 { background: #6fcf97; left: 50%; animation-delay: 1s;}
+        .confetti .c4 { background: #56ccf2; left: 70%; animation-delay: 1.5s;}
+        .confetti .c5 { background: #fcb69f; left: 90%; animation-delay: 2s;}
+        @keyframes confetti-fall {
+            0% { top: -10px; }
+            100% { top: 110%; }
+        }
+        .cake {
+            margin: 30px auto 0;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .cake-base {
+            width: 100px;
+            height: 40px;
+            background: #ffe082;
+            border-radius: 0 0 40px 40px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: 3px solid #ffb300;
+        }
+        .cake-top {
+            width: 80px;
+            height: 30px;
+            background: #ff6f91;
+            border-radius: 40px 40px 20px 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 3px solid #ffb300;
+        }
+        .candle {
+            width: 8px;
+            height: 25px;
+            background: #fff;
+            position: absolute;
+            top: -15px;
+            left: 46px;
+            border-radius: 4px;
+            border: 1px solid #ffb300;
+        }
+        .flame {
+            width: 12px;
+            height: 18px;
+            background: radial-gradient(circle at 6px 6px, #ffeb3b 60%, #ff9800 100%);
+            position: absolute;
+            top: -20px;
+            left: 44px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0.8;
+            animation: flame-flicker 0.6s infinite alternate;
+        }
+        @keyframes flame-flicker {
+            0% { transform: scaleY(1);}
+            100% { transform: scaleY(1.2);}
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="balloons">
+            <div class="balloon balloon1"></div>
+            <div class="balloon balloon2"></div>
+            <div class="balloon balloon3"></div>
+            <div class="balloon balloon4"></div>
+        </div>
+        <div class="confetti">
+            <span class="c1"></span>
+            <span class="c2"></span>
+            <span class="c3"></span>
+            <span class="c4"></span>
+            <span class="c5"></span>
+        </div>
+        <h1>¡Feliz Cumpleaños, Fátima! 🎉</h1>
+        <p>
+            Hoy es un día para celebrar a lo grande, ¡porque tú eres increíble!<br>
+            Que tu día esté lleno de risas, abrazos, pastel y mucha diversión.<br>
+            ¡Sigue brillando y cumpliendo tus sueños!<br>
+            <strong>¡Te deseo lo mejor hoy y siempre!</strong>
+        </p>
+        <div class="cake">
+            <div class="cake-base"></div>
+            <div class="cake-top"></div>
+            <div class="candle"></div>
+            <div class="flame"></div>
+        </div>
+    </div>
+</body>
+</html>
